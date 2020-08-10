@@ -11,7 +11,17 @@ class celula
 private:
     string nome;
     celula *proxima;
+    
+
+    
 public:
+	
+	celula (string n, celula *p)
+	{
+		nome = n;
+		proxima = p;
+	}
+	
     celula(){
         proxima = NULL;
     }
@@ -49,9 +59,9 @@ public:
     }
     
     void inserirInicio(string nome){
-        celula * nova = new celula();
-        nova->setNome(nome);
-        nova->setProxima(inicio);
+        celula * nova = new celula(nome, inicio);
+        //nova->setNome(nome);
+        //nova->setProxima(inicio);
         inicio = nova;
     }
     
